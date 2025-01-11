@@ -1,7 +1,9 @@
 FastAPI IoT Data Ingestion Service
 Overview
 
-This is a FastAPI backend service, designed to ingest, validate, decode Base64-encoded audio IoT data, and store the metadata in an SQLite database. The API provides an endpoint for uploading audio data and returns a JSON response indicating success or failure.
+This is a FastAPI backend service, designed to ingest, validate, decode Base64-encoded audio IoT data and store the associated metadata in an SQLite database. The API provides an endpoint for uploading audio data and returns a JSON response indicating success or failure.
+
+
 Features
 
 - Ingest IoT audio data via POST requests
@@ -17,15 +19,16 @@ Features
 
 Getting Started
 
-The outlined instructions assume you are working on a debian linux computer and you have installed python3, the python package manager pip and the API testing tool Postman.
+The outlined instructions assume you will be working or using the app on a debian / linux computer and you have installed python3, the python package manager - pip and the API testing tool Postman.
 
 
 Installation 
 
+Clone the remote git repository into your computer and change directory into it.
 $git clone https://github.com/doh-halle/iot-data.git
 cd iot-data
 
-Install the following dependencies by running the command below on your linux terminal
+Run the command below on your linux terminal to install dependencies
 
 $ pip install fastapi uvicorn pydantic sqlite3 httpx pytest
 
@@ -33,7 +36,7 @@ Start your API server
 
 $ uvicorn  iotdata:app
 
-Launch your Postman app, at the beginning of the address bar choose the POST method from the dropdown list and and key in the URL - http://127.0.0.1:8000/process-audio into the address bar.
+Launch your Postman app, at the beginning of the address bar choose the POST method from the dropdown list and key in the URL - http://127.0.0.1:8000/process-audio into the address bar.
 
 Below the address bar, click the body tab, raw and JSON radio button
 
@@ -50,7 +53,7 @@ In the body of the request, submit any sample data of your choosing which fits t
     ]
 }
 
-Click the "Send" Button
+Click the "Send" Button and wait for a response
 
 Response Examples - Upon Success
 
